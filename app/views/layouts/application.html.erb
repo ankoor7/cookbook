@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookbook</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id='page'>
+    <div id='header'>
+      <div class="navbar">
+        <div class="navbar-inner">
+          <a class="brand" href=<%=recipes_path%>>Cookbook</a>
+          <ul class="nav">
+            <li><a href=<%=recipes_path%>>Recipes</a></li>
+            <form class="navbar-search pull-left" method='post' action=<%=search_tags_path%>>
+              <input type="text" class="search-query" placeholder="Search Tags" name='tags_search' >
+            </form>
+          </ul>
+        </div>
+      </div>
+    </div>  <!-- end .header -->
+
+    <%= yield %>
+
+  </div> <!-- end .page -->
+</body>
+</html>

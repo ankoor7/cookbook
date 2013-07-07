@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @recipe.name %> </h1>
+
+<p>
+  <b>Description:</b>
+  <%= @recipe.description %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%= @recipe.picture %>
+</p>
+
+<p>
+  <b>Instructions:</b>
+  <%= @recipe.instructions %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @recipe.category.try(:name) %>
+</p>
+
+<p>
+<b>Tags:</b>
+  <%= @recipe.tag_list.join(', ') %>
+</p>
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
