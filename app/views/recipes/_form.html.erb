@@ -23,6 +23,15 @@
     <%= f.label :picture %><br />
     <%= f.text_field :picture %>
   </div>
+
+  <% f.fields_for :ingredients do |ingredients_form| %>
+    <div class="field">
+      <%= ingredients_form.label :name %><br />
+      <%= ingredients_form.text_field :name %>
+    </div>
+    <% end %>
+
+
   <div class="field">
     <%= f.label :instructions %><br />
     <%= f.text_area :instructions %>

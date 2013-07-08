@@ -12,6 +12,13 @@
   <%= @recipe.picture %>
 </p>
 
+  <b>Ingredients:</b>
+<ul>
+  <% @recipe.ingredients.each do |i| %>
+  <li><%= i.name %> <%= RecipeIngredient.where(recipe_id: @recipe.id, ingredient_id: i.id).first.amount %></li>
+  <% end %>
+</ul>
+
 <p>
   <b>Instructions:</b>
   <%= @recipe.instructions %>

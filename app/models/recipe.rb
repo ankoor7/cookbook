@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :description, :instructions, :name, :picture, :recipe_ingredients, :category_id, :category, :tag_list
+  attr_accessible :description, :instructions, :name, :picture, :recipe_ingredients, :category_id, :category, :tag_list, :ingredients
   acts_as_taggable
   belongs_to :category
   has_many 'recipe_ingredients'
