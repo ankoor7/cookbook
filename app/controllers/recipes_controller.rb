@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
-
+    @background = nil
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @recipes }
@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
-
+    @background = @recipe.picture
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @recipe }
