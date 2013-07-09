@@ -1,4 +1,9 @@
 Cookbook::Application.routes.draw do
+
+  resources :sessions, only: [:new, :create, :destroy]
+  get '/login', to: 'sessions#new'
+  resources :users
+
   resources :recipe_ingredients
 
 
@@ -9,6 +14,7 @@ Cookbook::Application.routes.draw do
 
   post 'search_tags', to: 'recipes#search_tags'
 
+  root to: 'recipes#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -6,6 +6,7 @@
     <p><%= recipe.description %></p>
     <div class='recipe-meta'>
         <p>Tags: <%= recipe.category.try(:name) %> <%= recipe.tag_list %><br />
+
         <%= link_to 'Edit', edit_recipe_path(recipe) %>
         <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     </div>

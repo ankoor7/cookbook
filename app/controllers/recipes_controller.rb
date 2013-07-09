@@ -1,6 +1,8 @@
 class RecipesController < ApplicationController
-  # GET /recipes
-  # GET /recipes.json
+
+  before_filter :authenticate, only: [:edit, :update, :destroy]
+
+
   def index
     @recipes = Recipe.all
     @background = nil
