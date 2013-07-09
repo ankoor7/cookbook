@@ -5,7 +5,7 @@
 
 <p>
   <b>Description:</b>
-  <%= @recipe.description %>
+  <%= @recipe.description.html_safe %>
 </p>
 
   <b>Ingredients:</b>
@@ -17,7 +17,7 @@
 
 <p>
   <b>Instructions:</b>
-  <%= @recipe.instructions %>
+  <%= @recipe.instructions.html_safe %>
 </p>
 
 <p>
