@@ -38,7 +38,7 @@ load_and_authorize_resource
   # GET /recipes/new.json
   def new
     @recipe = Recipe.new
-
+    @background = 'produce.jpg'
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @recipe }

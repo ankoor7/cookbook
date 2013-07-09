@@ -30,6 +30,8 @@
   <%= @recipe.tag_list.join(', ') %>
 </p>
 
+<% if can? :update, @recipe %>
   <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+<% end %>
 <%= link_to 'Back', recipes_path %>
 </div>

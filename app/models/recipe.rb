@@ -8,7 +8,6 @@ class Recipe < ActiveRecord::Base
   # belongs_to :user
 
   def uniqueness_of_ingredients
-    # binding.pry
     if ingredient_ids.uniq.size != ingredient_ids.size
       errors.add :ingredients, "An ingredient can't be added several times per recipe"
     end

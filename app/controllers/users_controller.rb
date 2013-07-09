@@ -17,4 +17,20 @@ class UsersController < ApplicationController
       render 'new'
     end
    end
+
+  def edit
+    @user = current_user
+     render :edit
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(params[:user])
+      redirect_to root_url, notice: 'Successfully registered!'
+    else
+      render 'edit'
+    end
+   end
+
 end

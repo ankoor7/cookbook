@@ -7,13 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body style="background-image:url('<%= asset_path @background %>');">
-  <div id='page' >
     <div id='header'>
       <div class="navbar">
         <div class="navbar-inner">
           <a class="brand" href=<%=recipes_path%>>Cookbook</a>
           <ul class="nav">
                 <% if current_user %>
+                  <li><%= link_to 'Account', edit_user_path(current_user) %></li>
                   <li><%= link_to 'Logout', session_path(session), method: :delete, data: {confirm: 'Are you sure?'} %></li>
                 <% else %>
                   <li><a href=<%=login_path%>>Login</a></li>
@@ -26,6 +26,7 @@
         </div>
       </div>
     </div>  <!-- end .header -->
+  <div id='page' >
 
     <%= yield %>
 

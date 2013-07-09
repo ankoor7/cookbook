@@ -6,11 +6,12 @@
     <p><%= recipe.description %></p>
     <div class='recipe-meta'>
         <p>Tags: <%= recipe.category.try(:name) %> <%= recipe.tag_list %><br />
-        <% if can? :update, @recipe %>
+        <% if can? :update, recipe %>
           <%= link_to 'Edit', edit_recipe_path(recipe) %>
           <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <% end %>
     </div>
 <% end %>
-
-<p><%= link_to 'New Recipe', new_recipe_path %></p>
+<% if can? :create, Recipe %>
+  <p><%= link_to 'New Recipe', new_recipe_path %></p>
+<% end %>

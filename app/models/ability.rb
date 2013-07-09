@@ -7,6 +7,9 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.role? 'admin'
         can :manage, :all
+      elsif user.role? 'user'
+        can :read, :all
+        can [:create,:update,:edit,:new], Recipe
       else
         can :read, :all
       end
