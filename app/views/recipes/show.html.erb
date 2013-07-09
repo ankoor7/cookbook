@@ -11,7 +11,7 @@
   <b>Ingredients:</b>
 <ul>
   <% @recipe.ingredients.each do |i| %>
-  <li><%= i.name %> <%= RecipeIngredient.where(recipe_id: @recipe.id, ingredient_id: i.id).first.amount %></li>
+  <li><%= i.name.capitalize %> <%= RecipeIngredient.where(recipe_id: @recipe.id, ingredient_id: i.id).first.amount %></li>
   <% end %>
 </ul>
 
@@ -30,7 +30,6 @@
   <%= @recipe.tag_list.join(', ') %>
 </p>
 
-
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+  <%= link_to 'Edit', edit_recipe_path(@recipe) %>
 <%= link_to 'Back', recipes_path %>
 </div>

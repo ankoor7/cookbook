@@ -1,11 +1,12 @@
 class RecipesController < ApplicationController
 
-  before_filter :authenticate, only: [:edit, :update, :destroy]
+load_and_authorize_resource
+  # before_filter :authenticate, only: [:edit, :update, :destroy]
 
 
   def index
     @recipes = Recipe.all
-    @background = nil
+    @background = 'bamboo-cutting-board.jpg'
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @recipes }

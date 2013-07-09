@@ -5,6 +5,7 @@ class Recipe < ActiveRecord::Base
   has_many 'recipe_ingredients'
   has_many :ingredients, :through => 'recipe_ingredients'
   validate :uniqueness_of_ingredients
+  # belongs_to :user
 
   def uniqueness_of_ingredients
     # binding.pry
