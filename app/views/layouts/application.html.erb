@@ -13,7 +13,11 @@
           <a class="brand" href=<%=recipes_path%>>Cookbook</a>
           <ul class="nav">
                 <% if current_user %>
-                  <li><%= link_to 'Account', edit_user_path(current_user) %></li>
+                  <% if can? :update, User %>
+                    <li><%= link_to 'Dashboard', dashboard_path %></li>
+                  <% end %>
+                  <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
+                  <li><%= link_to 'Your recipes', users_recipes_path %></li>
                   <li><%= link_to 'Logout', session_path(session), method: :delete, data: {confirm: 'Are you sure?'} %></li>
                 <% else %>
                   <li><a href=<%=login_path%>>Login</a></li>

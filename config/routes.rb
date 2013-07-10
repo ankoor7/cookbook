@@ -4,6 +4,8 @@ Cookbook::Application.routes.draw do
   get '/login', to: 'sessions#new'
   resources :users
 
+  get '/dashboard', to: 'users#dashboard'
+
   resources :recipe_ingredients
 
 
@@ -12,8 +14,9 @@ Cookbook::Application.routes.draw do
 
   resources :recipes
 
+  get  'users_recipes', to: 'recipes#users_recipes'
   post 'search_tags', to: 'recipes#search_tags'
-  post 'search', to: 'recipes#search'
+  post 'search', to: 'recipes#index'
 
   root to: 'recipes#index'
 

@@ -1,8 +1,8 @@
 <div class='recipe-background' >
 <p id="notice"><%= notice %></p>
 
-<h2><%= @recipe.name %> </h2>
-
+<h2><%= @recipe.name %></h2>
+<div class='meta'>by <%= @recipe.user.username %> </div>
 <p>
   <b>Description:</b>
   <%= @recipe.description.html_safe %>

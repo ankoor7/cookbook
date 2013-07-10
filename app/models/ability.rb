@@ -8,10 +8,10 @@ class Ability
       if user.role? 'admin'
         can :manage, :all
       elsif user.role? 'user'
-        can :read, :all
-        can [:create,:update,:edit,:new], Recipe
+        # can :read, :all
+        can [:create,:update,:edit,:new,:index,:show], Recipe
       else
-        can :read, :all
+        can [:index,:show], Recipe
       end
     #
     # The first argument to `can` is the action you are giving the user

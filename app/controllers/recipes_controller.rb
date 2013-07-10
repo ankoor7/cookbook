@@ -1,33 +1,20 @@
 class RecipesController < ApplicationController
 
-load_and_authorize_resource
-  # before_filter :authenticate, only: [:edit, :update, :destroy]
+  load_and_authorize_resource
 
 
   def index
     # @q = Recipe.search(params[:q])
     @recipes = @q.result(distinct: true)
     @background = 'bamboo-cutting-board.jpg'
-    # respond_to do |format|
-    #   format.html # index.html.erb
-    #   format.json { render json: @recipes }
-    # end
   end
 
-  def search
-    index
+  def users_recipes
+    # @q = Recipe.search(user: current_user.id)
+    # binding.pry
+    # @recipes = @q.result(distinct: true)
     render :index
   end
-
-  def search_tags
-    @recipes = Recipe.tagged_with(params[:tags_search], :any => true)
-
-    respond_to do |format|
-      format.html  { render 'index' }
-      format.json { render json: 'index' }
-    end
-  end
-
 
   # GET /recipes/1
   # GET /recipes/1.json

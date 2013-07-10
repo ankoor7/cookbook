@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def dashboard
+  end
+
+
   def new
     @user = User.new
      render :new
