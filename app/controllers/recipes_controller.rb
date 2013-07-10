@@ -27,7 +27,8 @@ load_and_authorize_resource
   # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
-    @background = @recipe.picture
+    # @background = @recipe.picture
+    @background = @recipe.recipe_image.background.url
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @recipe }
@@ -48,6 +49,7 @@ load_and_authorize_resource
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
+    @background = 'recipe_box.jpg'
   end
 
   # POST /recipes
