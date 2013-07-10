@@ -54,6 +54,7 @@ load_and_authorize_resource
   # POST /recipes.json
   def create
     @recipe = Recipe.new(params[:recipe])
+    @recipe.user_id = session[:user_id]
 
     respond_to do |format|
       if @recipe.save
