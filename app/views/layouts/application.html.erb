@@ -20,9 +20,9 @@
                   <li><a href=<%=new_user_path%>>Register</a></li>
                 <% end %>
            </ul>
-            <form class="navbar-search pull-right" method='post' action=<%=search_tags_path%>>
-              <input type="text" class="search-query input-small" placeholder="Search Tags" name='tags_search' >
-            </form>
+            <%= search_form_for @q, url: search_path, html: {method: :post, class: "navbar-search pull-right"} do |f| %>
+              <%= f.text_field :tags_name_or_ingredients_name_or_name_cont, class: "search-query input-medium", placeholder: 'Search' %>
+            <% end %>
         </div>
       </div>
     </div>  <!-- end .header -->

@@ -11,7 +11,6 @@
   <b>Ingredients:</b>
 <ul>
   <% @recipe.ingredients.each do |i| %>
-  <li><%= image_tag @recipe.recipe_image.detail.url %></li>
   <li><%= i.name.capitalize %> <%= RecipeIngredient.where(recipe_id: @recipe.id, ingredient_id: i.id).first.amount %></li>
   <% end %>
 </ul>

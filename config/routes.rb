@@ -13,6 +13,7 @@ Cookbook::Application.routes.draw do
   resources :recipes
 
   post 'search_tags', to: 'recipes#search_tags'
+  post 'search', to: 'recipes#search'
 
   root to: 'recipes#index'
 

@@ -9,6 +9,8 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'ransack'
+gem 'acts-as-taggable-on'
 
 group :development do
   gem 'pry-rails'
@@ -17,9 +19,9 @@ group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'meta_request'
+  gem 'awesome_print'
 end
 
-gem 'acts-as-taggable-on'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -38,7 +40,6 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
-gem 'awesome_print'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

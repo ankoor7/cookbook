@@ -5,12 +5,18 @@ load_and_authorize_resource
 
 
   def index
-    @recipes = Recipe.all
+    # @q = Recipe.search(params[:q])
+    @recipes = @q.result(distinct: true)
     @background = 'bamboo-cutting-board.jpg'
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @recipes }
-    end
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.json { render json: @recipes }
+    # end
+  end
+
+  def search
+    index
+    render :index
   end
 
   def search_tags

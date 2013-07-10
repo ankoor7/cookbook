@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_attributes(params[:user])
-      redirect_to root_url, notice: 'Successfully registered!'
+      redirect_to root_url, notice: 'Successfully updated!'
     else
       render 'edit'
     end
