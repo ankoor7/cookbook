@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def dashboard
+    @background = 'corkboard.jpg'
   end
 
 
@@ -10,7 +11,9 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.where("role = 'user'")
+    @admins = User.where("role = 'admin'")
+    @background = 'corkboard.jpg'
     render :index
   end
 

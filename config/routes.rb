@@ -14,9 +14,9 @@ Cookbook::Application.routes.draw do
 
   resources :recipes
 
-  get  'users_recipes', to: 'recipes#users_recipes'
-  post 'search_tags', to: 'recipes#search_tags'
-  post 'search', to: 'recipes#index'
+  get  '/users_recipes', to: 'recipes#search_users_recipes'
+  post '/search_tags', to: 'recipes#search_tags'
+  post '/search', to: 'recipes#index'
 
   root to: 'recipes#index'
 

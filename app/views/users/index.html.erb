@@ -1,1 +1,27 @@
-<h1>Users#index</h1>
+<h1>Admins</h1>
+
+<% @admins.each do |user| %>
+    <div>
+      <h2><%= user.username %></a></h2>
+      <p><%= user.email %></p>
+    <% unless user == current_user %>
+          <% if can? :destroy, User %>
+            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
+      <% end %>
+      </div>
+<% end %>
+
+<h1>Users</h1>
+
+<% @users.each do |user| %>
+    <div>
+      <h2><%= user.username %></a></h2>
+      <p><%= user.email %></p>
+    <% unless user == current_user %>
+          <% if can? :destroy, User %>
+            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
+      <% end %>
+      </div>
+<% end %>

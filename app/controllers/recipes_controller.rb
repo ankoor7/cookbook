@@ -9,10 +9,9 @@ class RecipesController < ApplicationController
     @background = 'bamboo-cutting-board.jpg'
   end
 
-  def users_recipes
-    # @q = Recipe.search(user: current_user.id)
-    # binding.pry
-    # @recipes = @q.result(distinct: true)
+  def search_users_recipes
+    @recipes = Recipe.where("user_id = '#{current_user.id}'")
+    @background = 'bamboo-cutting-board.jpg'
     render :index
   end
 
