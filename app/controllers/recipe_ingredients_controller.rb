@@ -1,6 +1,9 @@
 class RecipeIngredientsController < ApplicationController
   # GET /recipe_ingredients
   # GET /recipe_ingredients.json
+
+  load_and_authorize_resource
+
   def index
     @recipe_ingredients = RecipeIngredient.all
 

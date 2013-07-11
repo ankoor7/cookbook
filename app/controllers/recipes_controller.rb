@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
   load_and_authorize_resource
 
+  before_filter :set_background
 
   def index
     # @q = Recipe.search(params[:q])
@@ -87,5 +88,9 @@ class RecipesController < ApplicationController
       format.html { redirect_to recipes_url }
       format.json { head :no_content }
     end
+  end
+
+  def set_background
+
   end
 end

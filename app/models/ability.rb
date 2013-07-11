@@ -9,7 +9,8 @@ class Ability
         can :manage, :all
       elsif user.role? 'user'
         # can :read, :all
-        can [:create,:update,:edit,:new,:index,:show], Recipe
+        can [:create,:new,:index,:show], Recipe
+        can [:update,:edit], Recipe, :active => true, :user_id => user.id
       else
         can [:index,:show], Recipe
       end

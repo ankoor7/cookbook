@@ -4,9 +4,9 @@
   <title>Cookbook</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>  <%= csrf_meta_tags %>
 </head>
-<body style="background-image:url('<%= asset_path @background %>');  background-size: cover;">
+<body style="background:url('<%= asset_path @background %>')  #000 no-repeat fixed; background-size: cover;">
     <div id='header'>
       <div class="navbar">
         <div class="navbar-inner">
@@ -17,7 +17,7 @@
                     <li><%= link_to 'Dashboard', dashboard_path %></li>
                   <% end %>
                   <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
-                  <li><%= link_to 'Your recipes', users_recipes_path %></li>
+                  <li><%= link_to 'My recipes', users_recipes_path %></li>
                   <li><%= link_to 'Logout', session_path(session), method: :delete, data: {confirm: 'Are you sure?'} %></li>
                 <% else %>
                   <li><a href=<%=login_path%>>Login</a></li>

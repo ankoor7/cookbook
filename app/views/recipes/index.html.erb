@@ -3,6 +3,7 @@
 
 <% @recipes.each do |recipe| %>
     <h2><a href='<%= recipe_path(recipe)%>'><%= recipe.name %></a></h2>
+    <%= image_tag(recipe.recipe_image.detail, height: 'auto', width: '100%') %>
     <p><%= recipe.description %></p>
     <div class='recipe-meta'>
         <p>Tags: <%= recipe.category.try(:name) %> <%= recipe.tag_list %><br />

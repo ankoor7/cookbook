@@ -10,8 +10,8 @@
 
   <b>Ingredients:</b>
 <ul>
-  <% @recipe.ingredients.each do |i| %>
-  <li><%= i.name.capitalize %> <%= RecipeIngredient.where(recipe_id: @recipe.id, ingredient_id: i.id).first.amount %></li>
+  <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
+    <li><%= recipe_ingredient.amount %> of <%= recipe_ingredient.ingredient.name %></li>
   <% end %>
 </ul>
 

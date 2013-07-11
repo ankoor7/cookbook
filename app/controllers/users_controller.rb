@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  load_and_authorize_resource
+
+
   def dashboard
     @background = 'corkboard.jpg'
   end

@@ -1,0 +1,9 @@
+<p>Ingredients</p>
+<%= f.fields_for :recipe_ingredients do |recipe_ingredient_form| %>
+  <%= recipe_ingredient_form.label :amount %>
+  <%= recipe_ingredient_form.text_field :amount %>
+
+  <%= recipe_ingredient_form.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+  <%= recipe_ingredient_form.link_to_remove 'remove' %>
+<% end %>
+  <%= f.link_to_add 'add another ingredient', :recipe_ingredients %>

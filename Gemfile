@@ -11,8 +11,10 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'ransack'
 gem 'acts-as-taggable-on'
+gem "nested_form"
 
 group :development do
+  gem 'railroady'
   gem 'pry-rails'
   gem 'pry-debugger'
   gem 'pry-stack_explorer'
