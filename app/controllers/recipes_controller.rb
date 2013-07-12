@@ -5,22 +5,18 @@ class RecipesController < ApplicationController
   before_filter :set_background
 
   def index
-    # @q = Recipe.search(params[:q])
     @recipes = @q.result(distinct: true)
     @background = 'bamboo-cutting-board.jpg'
   end
 
   def search_users_recipes
-    @recipes = Recipe.where("user_id = '#{current_user.id}'")
+    @recipes = Recipe.written_by_user(current_user)
     @background = 'bamboo-cutting-board.jpg'
     render :index
   end
 
-  # GET /recipes/1
-  # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
-    # @background = @recipe.picture
     @background = @recipe.recipe_image.background.url
     respond_to do |format|
       format.html # show.html.erb
